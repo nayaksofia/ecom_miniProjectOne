@@ -1,0 +1,35 @@
+
+<div class="container">
+    <!--For Input: -->
+    <h2>Add Product</h2>
+
+<form [formGroup]="productRef" (ngSubmit)="storeProduct()"> <!--Bind the component-->
+    <label>Product Name:</label>
+    <input type="text" formControlName="pname" class="form-control">
+    <br/>
+    <label>Price:</label>
+    <input type="number" formControlName="price" class="form-control">
+    <br/>
+    <br/>
+    <input type="submit" value="Store Product" class="btn btn-success">
+    <input type="reset"  value="Reset" class="btn btn-info">
+</form>
+
+<br/>
+<br/>
+<!--For Displaying Information : Table Format-->
+<table border="1px" class="table">
+    <tr>
+       <th>Product ID</th>
+       <th>Product Name</th>
+       <th>Price</th>
+    </tr>
+
+    <tr *ngFor="let product of products">
+       <td>{{product.pid}}</td>
+       <td>{{product.pname}}</td>
+       <td>{{product.price}}</td>
+    </tr>
+
+</table>
+</div>
